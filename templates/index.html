@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">📋 Task Manager</h1>
+        
+        <!-- Add Task Form -->
+        <div class="add-task">
+            <form id="add-task-form">
+                <input type="text" id="task-title" placeholder="Enter task title..." required>
+                <textarea id="task-description" placeholder="Description (optional)"></textarea>
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+        
+        <!-- Filter -->
+        <div class="filters">
+            <label for="filter">Filter:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+        
+        <!-- Task List -->
+        <div id="task-list"></div>
+    </div>
+    
+    <!-- Modal for editing -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-edit-modal">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="edit-task-form">
+                <input type="hidden" id="edit-task-id">
+                <input type="text" id="edit-task-title" placeholder="Task title" required>
+                <textarea id="edit-task-description" placeholder="Description (optional)"></textarea>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="edit-task-completed"> Completed
+                </label>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
